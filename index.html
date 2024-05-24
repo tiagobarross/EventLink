@@ -30,7 +30,7 @@
 
         <div class="input-wrapper">
           <label for="event-link">Link do evento <span>(comece com https://)</span></label>
-          <input type="text"/>
+          <input type="url"/>
         </div><!--input-wrapper-->
 
         <div class="input-wrapper">
@@ -44,7 +44,12 @@
         </div><!--input-wrapper-->
 
         <div class="input-wrapper">
-          <label for="category">Categoria</span></label>
+          <label for="event-category">Categoria</label>
+          <select id="event-category">
+            <option value="live">Ao vivo</option>
+            <option value="podcast">Podcast</option>
+            <option value="mentorship">Mentoria</option>
+          </select>
         </div><!--input-wrapper-->
       </fieldset>
 
