@@ -49,7 +49,10 @@ form{
   background-color: #FAFAFC;
   min-height: 300px;
   margin-top: 38px;
-  border-radius: 8px;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
   padding: 64px;
 }
 
@@ -71,7 +74,8 @@ fieldset legend{
   margin-top: 24px;
 }
 
-.input-wrapper label{
+.input-wrapper label,
+.checkbox-wrapper label{
   color: #4E4958;
   font-size: 14px;
   line-height: 24px;
@@ -122,4 +126,83 @@ fieldset legend{
   background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
   background-repeat: no-repeat;
   background-position: right 10px center;
+}
+
+.date-columns{
+  display: flex;
+  gap: 20px;
+}
+
+.date-columns input{
+  justify-content: center;
+  align-items: center;
+}
+
+.date-columns > div:nth-child(1){
+  width: 100%;
+}
+
+.checkbox-wrapper label{
+  display: flex;
+  align-items: center;
+  margin: 24px 0 0;
+  gap: 16px;
+}
+
+.checkbox-wrapper{
+  position: relative;
+}
+
+.checkbox-wrapper input{
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+}
+
+.checkbox-wrapper label::before{
+  content: '';
+  width: 24px;
+  height: 24px;
+  display: block;
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+}
+
+.checkbox-wrapper input:checked + label::before{
+  background-image: url("data:image/svg+xml,%3Csvg width='18' height='14' viewBox='0 0 18 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 11.17L1.83 7L0.410004 8.41L6 14L18 2L16.59 0.589996L6 11.17Z' fill='%2342D3FF'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.checkbox-wrapper input:focus + label::before{
+  outline: 2px solid #000;
+}
+
+footer{
+  background-color: #F0F0F4;
+  height: 136px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 64px;
+  margin-bottom: 100px;
+  border-radius: 0 0 8px 8px;
+  border-top: 1px solid #D6D6D6;
+}
+
+footer .button{
+  font-family: "Archivo", sans-serif;
+  font-size: 16px;
+  height: 56px;
+  border-radius: 8px;
+  background-color: #04D361;
+  font-weight: 600;
+  border: none;
+  color: #FFFFFF;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+footer .button:hover{
+  background-color: #009b46;
 }
